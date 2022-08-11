@@ -2,14 +2,14 @@ import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 
-import { Piece } from './piece.js'
-import { Colour as C, Face as F, Move } from './enums.js'
+import { Cube } from './cube.js'
 
-let piece1 = new Piece([C.WHITE, C.GREEN, C.ORANGE], F.U, null);
-piece1.change_orientation("U");
-piece1.change_orientation("B'");
-piece1.change_orientation("R2");
-console.log(piece1['orientation']);
+let test = new Cube();
+
+test.make_moves("L2 B L' D2 B' U' F2 D' L' R B' R' L' D' R");
+
+console.log(test.get_corner('A'));
+console.log(test.get_edge('A'));
 
 
 

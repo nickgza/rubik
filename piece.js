@@ -1,6 +1,6 @@
 import { Colour, Face, Move } from './enums.js'
 
-export class Piece {
+class Piece {
     constructor(colours, orientation, orientation2) {
         this.colours = colours;
         this.orientation = orientation;
@@ -70,5 +70,19 @@ export class Piece {
                     break;
             }
         }
+    }
+}
+
+export class Corner extends Piece {
+    constructor(colours, orientation=null, orientation2=null) {
+        console.assert(colours.length === 3);
+        super(colours, orientation, orientation2);
+    }
+}
+
+export class Edge extends Piece {
+    constructor(colours, orientation=null, orientation2=null) {
+        console.assert(colours.length === 2);
+        super(colours, orientation, orientation2);
     }
 }
